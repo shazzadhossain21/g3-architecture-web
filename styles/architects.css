@@ -115,6 +115,48 @@
 #quick{
     font-weight: 500;
 }
+
+/* features section styles */
+
+.features{
+    gap: 140px;
+}
+#feature-section-title{
+    border-left: 5px solid rgb(255, 144, 14);
+    padding-left: 21px;
+}
+
+.feature-card{
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow:  0px 4px 30px 0px rgba(0, 0, 0, 0.06);
+
+}
+
+.feature-card .feature-title{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
+}
+
+#exp-badge{
+    padding: 45px 42px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: -50px;
+    margin-left: -100px;
+}
+#exp-years{
+    font-size: 4rem;
+    font-weight: 700;
+}
+.features-architect img{
+    max-width: 100%;
+}
+
 /* facts styles */
 .fact{
     border: 1px solid rgb(255, 144, 14) ;
@@ -145,17 +187,41 @@
     max-width: 540px;
 }
 
+/* sponsor style */
+
+.sponsor-info{
+    max-width: 540px;
+    margin: 50px auto;
+    text-align: center;
+}
+.sponsor-companies{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.sponsor-companies img{
+    filter: grayscale(100%);
+}
+
 /* responsive media query */
 @media screen and (max-width: 576px){
-    .navbar , .nav-links, .teams{
+    .navbar , .nav-links, .teams, .features{
         flex-direction: column;
     }
-    .team-img-container, .facts-container{
+    .team-img-container,
+     .facts-container,
+     .sponsor-companies
+     {
         grid-template-columns: repeat(1, 1fr);
     }
-    .facts-container{
-        margin-left: 40px;
+    .facts-container,.sponsor-companies{
+        /* margin-left: 40px; */
+        justify-items: center;
+        gap: 24px;
     }
+    #exp-badge{
+        margin-top: 20px;
+        margin-left: 80px;
+        
 }
 
 /* medium size device */
@@ -163,9 +229,11 @@
     .teams{
         flex-direction: column;
     }
-    .facts-container{
+    .facts-container, .sponsor-companies{
         grid-template-columns: repeat(2, 1fr);
-        margin-left: 40px;
+        /* margin-left: 40px; */
+        justify-items: center;
+        gap: 24px;
     }
 
 }
